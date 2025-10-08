@@ -67,7 +67,7 @@ export default function Home() {
             </header>
             <main className="max-w-5xl mx-auto px-6 pt-16 pb-24 text-center">
                 <h1 className="text-6xl font-black tracking-tight">How's your luck today?</h1>
-                <p className="mt-3 text-slate-300"> per address during the event have<span className="text-emerald-400 font-bold">30</span> free chances</p>
+                <p className="mt-3 text-slate-300"> per address during the event have <span className="text-emerald-400 font-bold">30</span> free chances</p>
                 <div className="mt-10">
                     <button onClick={startDraw} className="btn-glow">Play Now</button>
                 </div>
