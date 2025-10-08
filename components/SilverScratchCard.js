@@ -22,7 +22,7 @@ const SilverScratchCard = forwardRef(({ revealText }, ref) => {
       ctx.fillStyle = '#374151';
       ctx.font = 'bold 24px Inter';
       ctx.textAlign = 'center';
-      ctx.fillText('用手指/鼠标刮开', w / 2, 40);
+      ctx.fillText('Use finger/mouse to scratch', w / 2, 40);
     }
   }));
 
@@ -42,7 +42,7 @@ const SilverScratchCard = forwardRef(({ revealText }, ref) => {
     ctx.fillStyle = '#374151';
     ctx.font = 'bold 24px Inter';
     ctx.textAlign = 'center';
-    ctx.fillText('用手指/鼠标刮开', w / 2, 40);
+    ctx.fillText('Use finger/mouse to scratch', w / 2, 40);
 
     let scratched = 0;
     const radius = 25;
