@@ -74,11 +74,11 @@ export default function Scratch() {
 
     return (
         <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col items-center justify-center px-6">
-            <h1 className="text-4xl font-black mb-8">刮开涂层</h1>
+            <h1 className="text-4xl font-black mb-8">Scratch the Silver Layer</h1>
             <SilverScratchCard revealText={prize} key={prize} ref={stockRef} />
             <div className="mt-10 flex gap-4">
-                <button onClick={() => window.location.href = '/'} className="px-6 py-2 rounded-2xl bg-slate-800 hover:bg-slate-700 transition">返回首页</button>
-                <button onClick={drawAgain} className="btn-glow">再抽一次</button>
+                <button onClick={() => window.location.href = '/'} className="px-6 py-2 rounded-2xl bg-slate-800 hover:bg-slate-700 transition">Back to Home</button>
+                <button onClick={drawAgain} className="btn-glow">Play again</button>
             </div>
             {/* 实时库存（再抽后自动更新） */}
             <StockSection ref={stockRef} />
