@@ -32,17 +32,17 @@ const StockSection = forwardRef((props, ref) => {
 
   return (
     <section className="max-w-6xl mx-auto px-6 pb-16">
-      <h2 className="text-3xl font-black mb-6">剩余奖品库存</h2>
+      <h2 className="text-3xl font-black mb-6">Remaining Prize Pool</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {list.map((p) => (
           <div key={p.name} className="glass-card p-5">
-            <div className="flex items-center justify-between"><span className="font-bold text-slate-200">{p.name}</span><span className="text-emerald-400 font-mono-num">中奖率: {p.percent}%</span></div>
-            <div className="mt-2 text-slate-400 font-mono text-sm">剩余 {p.left} / {p.total}</div>
+            <div className="flex items-center justify-between"><span className="font-bold text-slate-200">{p.name}</span><span className="text-emerald-400 font-mono-num">Rate: {p.percent}%</span></div>
+            <div className="mt-2 text-slate-400 font-mono text-sm">Remaining {p.left} / {p.total}</div>
             <div className="mt-3 h-2 w-full bg-slate-700 rounded-full"><div className="h-2 bg-emerald-400 rounded-full" style={{ width: `${(p.left / p.total) * 100}%` }} /></div>
           </div>
         ))}
       </div>
-      <p className="text-center mt-8 text-slate-400">更多奖品正在路上</p>
+      <p className="text-center mt-8 text-slate-400">More prizes on the way</p>
     </section>
   );
 });
