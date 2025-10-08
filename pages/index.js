@@ -5,7 +5,7 @@ import ReceiptModal from '../components/ReceiptModal'
 import StockSection from '../components/StockSection'
 import { CHAIN_ID, RPC, CONTRACT, ABI } from '../utils/contract'
 
-const DEVNET2 = { chainId: ethers.utils.hexValue(CHAIN_ID), chainName: 'PlatON DevNet2', nativeCurrency: { name: 'LAT', symbol: 'LAT', decimals: 18 }, rpcUrls: [RPC], blockExplorerUrls: ['https://devnet2scan.platon.network/'] }
+const DEVNET2 = { chainId: ethers.utils.hexValue(CHAIN_ID), chainName: 'PlatON Mainnet', nativeCurrency: { name: 'LAT', symbol: 'LAT', decimals: 18 }, rpcUrls: [RPC], blockExplorerUrls: ['https://scan.platon.network/'] }
 
 export default function Home() {
     const [account, setAccount] = useState('')
@@ -34,7 +34,7 @@ export default function Home() {
         const chainId = await provider.getNetwork().then(n => n.chainId);
         if (chainId !== CHAIN_ID) {
             try { await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: ethers.utils.hexValue(CHAIN_ID) }] }); }
-            catch (e) { alert('请手动切换到 PlatON DevNet2'); return; }
+            catch (e) { alert('请手动切换到 PlatON Mainnet'); return; }
         }
         // ② 生成订单 & 弹收据
         const orderId = 'PlatON-' + Math.random().toString(16).slice(2, 8).toUpperCase();
@@ -60,16 +60,16 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-slate-100">
             <header className="flex items-center justify-between px-6 py-4 border-b border-slate-700/50">
-                <div className="text-2xl font-black tracking-wider">PLATON Pluck 刮刮乐</div>
+                <div className="text-2xl font-black tracking-wider">PLATON Pluck</div>
                 <button onClick={connect} className="px-4 py-2 rounded-2xl bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/20 transition">
                     {account ? `${account.slice(0, 6)}…${account.slice(-4)}` : 'Connect'}
                 </button>
             </header>
             <main className="max-w-5xl mx-auto px-6 pt-16 pb-24 text-center">
-                <h1 className="text-6xl font-black tracking-tight">今日手气如何？</h1>
-                <p className="mt-3 text-slate-300">每地址活动期间 <span className="text-emerald-400 font-bold">30</span> 次免费机会</p>
+                <h1 className="text-6xl font-black tracking-tight">How's your luck today?</h1>
+                <p className="mt-3 text-slate-300"> per address during the event have<span className="text-emerald-400 font-bold">30</span> free chances</p>
                 <div className="mt-10">
-                    <button onClick={startDraw} className="btn-glow">立即抽卡</button>
+                    <button onClick={startDraw} className="btn-glow">Play Now</button>
                 </div>
             </main>
             <StockSection />
