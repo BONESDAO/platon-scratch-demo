@@ -12,7 +12,7 @@ const StockSection = forwardRef((props, ref) => {
     const tmp = [];
     for (let i = 0; i < 6; i++) {
       const { amount, left, total, probability } = await c.prizes(i);
-      const name = ['1LAT', '2LAT', '10LAT', '50LAT', '100LAT', '1000LAT'][i];
+      const name = ['10LAT', '20LAT', '100LAT', '500LAT', '1000LAT', '10000LAT'][i];
       tmp.push({
         name,
         left: Number(left),
